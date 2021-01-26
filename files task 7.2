@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jan 25 12:30:54 2021
+
+@author: minaya.karimova
+
+
+fhandle = open('mina.txt', 'r')
+print(fhandle)
+
+fhandle = open('mina.txt', 'r')
+for cheese in fhandle:
+    print(cheese)
+
+
+count = 0
+
+fhandle = open('mina.txt', 'r')
+for cheese in fhandle:
+    count = count + 1
+
+print('line', count)
+
+txt = "     banana     "
+
+x = txt.rstrip()
+
+print("of all fruits", x, "is my favorite") 
+
+count = 0
+fhandle = open('mina.txt', 'r')
+for cheese in fhandle:
+    cheese = cheese.rstrip()
+    print(cheese)
+ """   
+
+
+# Use the file name mbox-short.txt as the file name
+fname = input("Enter file name: ")
+list1 = list()
+k = 0
+fh = open(fname)
+count = 0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:") : continue
+    else:
+        count = count + 1
+        pos = line.find('0')
+        number = float(line[20:])
+        k = k + number
+        
+    #print('LINE')
+    #print(line)
+    #print('POS')
+    #print(pos)
+    #print('Number')
+    #print(number)
+  
+#print("Done")
+#print(count)
+average = k/count
+print('Average spam confidence:', average)
